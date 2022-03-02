@@ -1,5 +1,8 @@
 class Person:
-    def __init__(self, city, address, phone_number):
+
+    def __init__(self, name, age, city, address, phone_number):
+        self.name = name
+        self.age = age
         self._city = city
         self._address = address
         self._phone_number = phone_number
@@ -28,5 +31,23 @@ class Person:
     def phone_number(self, value):
         self._phone_number = value
 
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value
+
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, value):
+        self._age = value
+
+
     def __str__(self):
-        return f'Address: {self._address}\nCity: {self._city}\nPhone: {self._phone_number}'
+        return f'Nimi: {self._name}\nIka: {self._age}\nAddress: {self._address}\nCity: {self._city}\nPhone: {self._phone_number}'
+
